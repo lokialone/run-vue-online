@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import { UnControlled as CodeMirror } from 'react-codemirror2';
 import './App.css';
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/material.css';
+import 'codemirror/theme/neat.css';
+import 'codemirror/mode/vue/vue.js';
 
 const App: React.FC = () => {
+  let value:string = "funciton a(){console.log('dddd');}";
+  let options:object = {
+    mode: 'vue',
+    theme: 'material',
+    lineNumbers: true
+  }
+  // let runCode:string = '';
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CodeMirror
+          value={value}
+          options={options}
+          onChange={(editor, value) => {
+            console.log('uncontrolled', {value});
+            // runCode = value.text;
+          }}
+        />
     </div>
   );
 }
