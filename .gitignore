@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+# packges里的node_modules
+/packages/**/node_modules
+/packages/**/dist
 /.pnp
 .pnp.js
 

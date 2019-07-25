@@ -1,0 +1,14 @@
+{
+	"name": "sfc-parser",
+	"version": "1.0.0",
+	"description": "简单的.vue文件处理程序",
+	"main": "index.js",
+	"author": "lokialone",
+	"license": "ISC",
+	"dependencies": {
+		"lodash": "^4.17.15"
+  },
+  "devDependencies":{
+    "typescript": "^3.5.3"
+  }
+}
