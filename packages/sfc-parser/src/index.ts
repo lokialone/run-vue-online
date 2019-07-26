@@ -1,8 +1,7 @@
-import mapValues from 'lodash.mapvalues'
+import mapValues = require('lodash.mapvalues')
 import {
   parseComponent as _parseComponent,
-  SFCBlockRaw,
-  SFCDescriptorRaw
+  SFCBlockRaw
 } from './sfc-parser'
 import { equalsRecord } from './utils'
 
@@ -19,8 +18,9 @@ export class SFCBlock {
 
   constructor(block: SFCBlockRaw) {
     Object.keys(block).forEach(_key => {
-      const key = _key as keyof SFCBlockRaw
-      this[key] = block[key]
+      const key = _key as keyof SFCBlockRaw;
+      // maybe it's typescript@3.5.3 bug, can't use  => this[key] = block[key]
+      (this as any)[key] = block[key]
     })
   }
 

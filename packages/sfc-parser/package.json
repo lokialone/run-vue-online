@@ -1,14 +1,22 @@
 {
-	"name": "sfc-parser",
-	"version": "1.0.0",
-	"description": "简单的.vue文件处理程序",
-	"main": "index.js",
-	"author": "lokialone",
-	"license": "ISC",
-	"dependencies": {
-		"lodash": "^4.17.15"
-  },
-  "devDependencies":{
-    "typescript": "^3.5.3"
-  }
+		"name": "sfc-parser",
+		"version": "1.0.0",
+		"description": "简单的.vue文件处理程序",
+		"main": "index.js",
+		"author": "lokialone",
+		"license": "ISC",
+		"dependencies": {
+				"lodash.mapvalues": "^4.6.0"
+		},
+		"scripts": {
+				"build": "gulp",
+				"dev": "ts-node example/index.ts"
+		},
+		"devDependencies": {
+				"browserify": "^16.3.0",
+				"gulp": "^4.0.2",
+				"gulp-typescript": "^5.0.1",
+				"ts-node": "^8.3.0",
+				"typescript": "^3.5.3"
+		}
 }

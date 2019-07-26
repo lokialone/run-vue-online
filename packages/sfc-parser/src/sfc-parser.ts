@@ -75,6 +75,7 @@ export function parseComponent(
           {} as Record<string, string | true>
         )
       }
+      console.log(isSpecialTag(tag), tag)
       if (isSpecialTag(tag)) {
         checkAttrs(currentBlock, attrs)
         if (tag === 'style') {
