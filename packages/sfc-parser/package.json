@@ -18,5 +18,6 @@
 				"gulp-typescript": "^5.0.1",
 				"ts-node": "^8.3.0",
 				"typescript": "^3.5.3"
-		}
+		},
+		"gitHead": "a0afab83b81a1cead73e3ee9e295e82df6948edc"
 }
