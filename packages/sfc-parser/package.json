@@ -1,11 +1,14 @@
 {
 	"name": "lk-sfc-parser",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "简单的.vue文件处理程序",
 	"main": "dist/index.js",
 	"author": "lokialone",
 	"license": "ISC",
-	"files":["dist", "types"],
+	"files": [
+		"dist",
+		"types"
+	],
 	"dependencies": {
 		"lodash.mapvalues": "^4.6.0",
 		"sfc-parser": "^0.1.0"
