@@ -1,8 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { parseComponent } from 'lk-sfc-parser';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+const vueTemplate = `
+<template lang="jade">
+    <div>{{test}}</div>
+</template> 
+<script>
+export default {
+    data() {
+        return {
+            test: hello
+        }
+    },
+    created() {
+        console.log('created');
+    }
+}
+</script>
+<style scope="true" lang="less">
+div {
+    background: red;
+}
+</style>
+`
+console.log(parseComponent(vueTemplate));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

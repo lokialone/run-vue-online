@@ -1,23 +1,25 @@
 {
-		"name": "lk-sfc-parser",
-		"version": "1.0.0",
-		"description": "简单的.vue文件处理程序",
-		"main": "dist/index.js",
-		"author": "lokialone",
-		"license": "ISC",
-		"dependencies": {
-				"lodash.mapvalues": "^4.6.0"
-		},
-		"scripts": {
-				"build": "gulp",
-				"dev": "ts-node example/index.ts"
-		},
-		"devDependencies": {
-				"browserify": "^16.3.0",
-				"gulp": "^4.0.2",
-				"gulp-typescript": "^5.0.1",
-				"ts-node": "^8.3.0",
-				"typescript": "^3.5.3"
-		},
-		"gitHead": "a0afab83b81a1cead73e3ee9e295e82df6948edc"
+	"name": "lk-sfc-parser",
+	"version": "1.0.0",
+	"description": "简单的.vue文件处理程序",
+	"main": "dist/index.js",
+	"author": "lokialone",
+	"license": "ISC",
+	"files":["dist", "types"],
+	"dependencies": {
+		"lodash.mapvalues": "^4.6.0",
+		"sfc-parser": "^0.1.0"
+	},
+	"scripts": {
+		"build": "tsc",
+		"dev": "ts-node example/index.ts"
+	},
+	"devDependencies": {
+		"browserify": "^16.3.0",
+		"gulp": "^4.0.2",
+		"gulp-typescript": "^5.0.1",
+		"ts-node": "^8.3.0",
+		"typescript": "^3.5.3"
+	},
+	"gitHead": "a0afab83b81a1cead73e3ee9e295e82df6948edc"
 }

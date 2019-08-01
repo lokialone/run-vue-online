@@ -5,6 +5,11 @@
  * http://erik.eae.net/simplehtmlparser/simplehtmlparser.js
  */
 
+/*
+ * from js to ts - - 
+ * by lokialone
+ */
+
 import { makeMap, no } from './utils'
 
 // HTML5 tags https://html.spec.whatwg.org/multipage/indices.html#elements-3
@@ -32,9 +37,11 @@ const comment = /^<!\--/
 const conditionalComment = /^<!\[/
 
 let IS_REGEX_CAPTURING_BROKEN = false
-'x'.replace(/x(.)?/g, function (m, g) {
-  IS_REGEX_CAPTURING_BROKEN = g === ''
-})
+// think below code is useless
+// 'x'.replace(/x(.)?/g, function (m, g) {
+//   IS_REGEX_CAPTURING_BROKEN = g === ''
+//   return ''
+// })
 
 // Special Elements (can contain anything)
 export const isPlainTextElement = makeMap('script,style,textarea', true)
@@ -184,7 +191,7 @@ export function parseHTML (html, options) {
   }
 
   // Clean up any remaining tags
-  parseEndTag()
+  parseEndTag(null, null, null)
 
   function advance (n) {
     index += n
@@ -206,9 +213,9 @@ export function parseHTML (html, options) {
         match.attrs.push(attr)
       }
       if (end) {
-        match.unarySlash = end[1]
+        match['unarySlash'] = end[1]
         advance(end[0].length)
-        match.end = index
+        match['end'] = index
         return match
       }
     }
@@ -220,10 +227,10 @@ export function parseHTML (html, options) {
 
     if (expectHTML) {
       if (lastTag === 'p' && isNonPhrasingTag(tagName)) {
-        parseEndTag(lastTag)
+        parseEndTag(lastTag, null, null)
       }
       if (canBeLeftOpenTag(tagName) && lastTag === tagName) {
-        parseEndTag(tagName)
+        parseEndTag(tagName, null, null)
       }
     }
 
