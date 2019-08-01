@@ -2,8 +2,7 @@
     "compilerOptions": {
         "outDir": "./dist",
         "target": "es5",
-        "declaration": true,
-        "declarationDir": "types"
+        "declaration": true
     },
     "include": [
         "./src/**/*"
