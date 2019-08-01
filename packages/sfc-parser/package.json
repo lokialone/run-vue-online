@@ -1,6 +1,6 @@
 {
 		"name": "lk-sfc-parser",
-		"version": "1.0.0",
+		"version": "0.0.1",
 		"description": "简单的.vue文件处理程序",
 		"main": "dist/index.js",
 		"author": "lokialone",
